@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.TextView
 import android.widget.Toast
+import androidx.core.content.ContextCompat
 import androidx.core.view.isVisible
 import com.app.part2.chapter2.lotto.databinding.ActivityMainBinding
 
@@ -70,10 +71,20 @@ class MainActivity : AppCompatActivity() {
             textView.isVisible = true
             textView.text = binding.numberPicker.value.toString()
 
+            setBackground(binding.numberPicker.value,textView)
+
             pickNumberSet.add(binding.numberPicker.value)
         }
     }
-
+    private fun setBackground(number:Int, textView: TextView) {
+        when(number) {
+            in 1..10 -> textView.background = ContextCompat.getDrawable(this, R.drawable.circle_yellow)
+            in 11..20 -> textView.background = ContextCompat.getDrawable(this, R.drawable.circle_blue)
+            in 21..30 -> textView.background = ContextCompat.getDrawable(this, R.drawable.circle_gray)
+            in 31..40 -> textView.background = ContextCompat.getDrawable(this, R.drawable.circle_green)
+            else -> textView.background = ContextCompat.getDrawable(this, R.drawable.circle_red)
+        }
+    }
     private fun initClearButton() { // 선택된 숫자들 초기화하고 안 보이게 visible false 로 & didRun false로 바꿈
         binding.clearButton.setOnClickListener {
             pickNumberSet.clear()
