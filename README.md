@@ -19,5 +19,8 @@
 
 
 >## Results
-
+>> ### Initial Screen
+![image](https://user-images.githubusercontent.com/69902747/148101387-c069de5c-d955-4121-9f18-6416d0e0b97b.png)\
+>> ### Select numbers
+![image](https://user-images.githubusercontent.com/69902747/148101481-0365d28e-aabd-4a17-8aeb-d5ba327ecdb8.png)
 
